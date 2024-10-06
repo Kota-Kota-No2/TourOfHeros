@@ -4,8 +4,8 @@
     list-style-type: none;
     padding: 0;
     width: 15em;
-  }
-  .heroes li {
+}
+.heroes li {
     cursor: pointer;
     position: relative;
     left: 0;
@@ -14,21 +14,21 @@
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
-  }
-  .heroes li:hover {
+}
+.heroes li:hover {
     color: #607D8B;
     background-color: #DDD;
     left: .1em;
-  }
-  .heroes li.selected {
+    }
+.heroes li.selected {
     background-color: #CFD8DC;
     color: white;
-  }
-  .heroes li.selected:hover {
+}
+.heroes li.selected:hover {
     background-color: #BBD8DC;
     color: white;
-  }
-  .heroes .badge {
+}
+.heroes .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -41,4 +41,8 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
-  }
+}
+.delete{
+    float: right;
+    margin: .5em;
+}

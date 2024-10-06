@@ -10,7 +10,7 @@ import { MessagesComponent } from './view/messages/messages.component';
     RouterOutlet,
     HeroesComponent,
     MessagesComponent,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

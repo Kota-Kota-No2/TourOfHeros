@@ -31,20 +31,15 @@ export class HeroDetailComponent implements OnInit {
   public getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
-      .subscribe(hero => {
-        if(hero){
-          this.hero = hero
-        }
-        else{
-          this.hero = {
-            id: 0,
-            name: "存在しません"
-          }
-        }
-      });
+      .subscribe(hero => this.hero = hero);
   }
 
   public goBack(): void {
     this.location.back();
+  }
+
+  public save(): void {
+    this.heroService.updateHero(this.hero!)
+      .subscribe(() => this.goBack());
   }
 }
