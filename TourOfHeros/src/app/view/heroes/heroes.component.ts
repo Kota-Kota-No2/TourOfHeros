@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../interface/hero';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HEROES } from '../../mock-heros';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../../service/hero.service';
 import { MessageService } from '../../service/message.service';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
   imports: [
+    RouterOutlet,
     CommonModule,
     FormsModule,
+    RouterModule,
     HeroDetailComponent
   ],
   templateUrl: './heroes.component.html',
@@ -21,8 +23,6 @@ import { MessageService } from '../../service/message.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
-  selectedHero?: Hero;
-
   constructor(
     private heroService: HeroService,
     private messageService: MessageService
@@ -30,11 +30,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
-  }
-
-  public onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
   }
 
   private getHeroes(){
