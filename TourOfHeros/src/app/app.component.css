@@ -1,0 +1,8 @@
+.NavItem{
+    margin: .5rem;
+    background-color: ghostwhite;
+}
+
+.NavItem:hover{
+    background-color: aquamarine;
+}
