@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../interface/hero';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HEROES } from '../../mock-heros';
 
 @Component({
   selector: 'app-heroes',
@@ -13,9 +14,15 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
 })
-export class HeroesComponent {
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+export class HeroesComponent implements OnInit {
+  heroes = HEROES;
+
+  selectedHero?: Hero;
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+
+  ngOnInit(): void {
+    this.selectedHero = this.heroes[0];
+  }
 }
